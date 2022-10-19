@@ -8,13 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Build application
-        run: |
-          yarn prepare
-          yarn build 
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - run: yarn prepare
+      - run: yarn build
 
       - name: Dispersed Release
         uses: dispersed-labs/dispersed-release-action@v1
