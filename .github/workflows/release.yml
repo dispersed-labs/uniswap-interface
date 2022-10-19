@@ -14,7 +14,7 @@ jobs:
       - run: yarn build
 
       - name: Dispersed Release
-        uses: dispersed-labs/dispersed-release-action
+        uses: dispersed-labs/dispersed-release-action@main
         with:
           build_dir: build
           bundle_name: uniswap-${{ github.ref_name }}.tgz
